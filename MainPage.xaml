@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LV"
+             x:Class="LV.MainPage">
+    <StackLayout>
+        <Label Text="Anime" VerticalOptions="Center" HorizontalOptions="Center" Font="22"/>
+        <Image Source="Anime.jpg"/>
+    
+    
+    <ListView x:Name="ImageCList">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ImageCell
+                    ImageSource="{Binding IconSource}"
+                    Detail="{Binding IDetail}"
+                    Tapped="Handle_Tapped"
+                    CommandParameter="{Binding URL}"
+                    Text="{Binding ImageText}"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    </StackLayout>
+</ContentPage>
